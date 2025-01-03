@@ -1,0 +1,37 @@
+services:
+  pub_db-postgres:
+    image: postgres:16.1
+    ports:
+      - '${POSTGRES_PORT}:5432'
+    environment:
+      POSTGRES_USER: '${POSTGRES_USER:-postgres}'
+      POSTGRES_PASSWORD: '${POSTGRES_PASSWORD:-qweqwe}'
+      POSTGRES_DB: '${POSTGRES_DB:-pub_db}'
+    volumes:
+      - ./pub_db-api-db:/var/lib/postgresql/pub_db
+
+  pub_db-redis:
+    image: redis:7.2.3
+    ports:
+      - '${REDIS_PORT:-6379}:6379'
+    env_file:
+      - .env
+    command: redis-server
+    restart: unless-stopped
+
+  pub_db-s3:
+    image: quay.io/minio/minio:latest
+    command: server /data --console-address ":9001"
+    restart: unless-stopped
+    ports:
+      - '8020:9000'
+      - '801:9001'
+    volumes:
+      - ./pub_db-api-s3-data:/usr/src/app/s3
+    environment:
+      - MINIO_ROOT_USER=user # AWS_S3_ACCESS_KEY
+      - MINIO_ROOT_PASSWORD=password # AWS_S3_SECRET_KEY
+
+volumes:
+  pub_db-api-db:
+  pub_db-api-s3:
