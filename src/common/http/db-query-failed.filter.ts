@@ -22,3 +22,5 @@ export class DbQueryFailedFilter {
     return { status, message, code };
   }
 }
+
+//todo виправити any

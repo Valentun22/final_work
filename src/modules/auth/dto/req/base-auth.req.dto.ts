@@ -14,3 +14,5 @@ export class BaseAuthReqDto extends PickType(BaseUserReqDto, [
   @Type(() => String)
   readonly deviceId: string;
 }
+
+//todo виправити dto

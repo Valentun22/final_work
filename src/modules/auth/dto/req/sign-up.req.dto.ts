@@ -7,3 +7,5 @@ export class SignUpReqDto extends PickType(BaseAuthReqDto, [
   'email',
   'password',
 ]) {}
+
+//todo виправити dto

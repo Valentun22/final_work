@@ -12,3 +12,5 @@ export class CreateSignboardDto extends PickType(BaseSignboardReqDto, [
   'views',
   'additionalInfo',
 ]) {}
+
+//todo виправити dto

@@ -6,3 +6,5 @@ export class UpdateUserDto extends PickType(BaseUserReqDto, [
   'name',
   'image',
 ]) {}
+
+//todo виправити dto

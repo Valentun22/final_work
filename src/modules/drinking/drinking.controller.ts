@@ -20,3 +20,5 @@ export class DrinkingController {
         return await this.drinkingService.getAll(filters);
     }
 }
+
+//todo глянути що з any

@@ -49,3 +49,5 @@ async function bootstrap() {
 	})
 }
 bootstrap()
+
+//todo виправити

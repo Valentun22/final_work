@@ -21,3 +21,5 @@ export class MeetingEntity {
 	// @ManyToOne(() => VenueEntity)
 	// venue: VenueEntity
 }
+
+//todo виправити икористання коду

@@ -45,3 +45,5 @@ import { Config, PostgresConfig } from '../../configs/config.type'
 	],
 })
 export class PostgresModule {}
+
+//todo виправити

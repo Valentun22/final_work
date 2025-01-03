@@ -9,3 +9,5 @@ export class UpdateSignboardDto extends PickType(BaseSignboardReqDto, [
     'status',
     'additionalInfo',
 ]) {}
+
+//todo виправити dto

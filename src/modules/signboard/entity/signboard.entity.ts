@@ -38,3 +38,5 @@ export class SignboardEntity extends BaseModel {
 	// @OneToMany(() => StatisticEntity, statistic => statistic.signboard)
 	// statistics: StatisticEntity[]
 }
+
+//todo виправити entity

@@ -6,3 +6,5 @@ export class CreateNewsDto extends PickType(NewsEntity, [
     'content',
     'venueId',
 ]) {}
+
+//todo виправити dto

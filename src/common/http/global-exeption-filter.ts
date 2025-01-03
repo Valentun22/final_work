@@ -56,3 +56,4 @@ export class GlobalExceptionFilter implements ExceptionFilter {
     });
   }
 }
+//todo виправити any

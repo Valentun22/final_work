@@ -11,3 +11,5 @@ export class StatisticEntity extends BaseModel {
 	// @JoinColumn({ name: 'signboard_id' })
 	// signboard: SignboardEntity
 }
+
+//todo виправити використання коду

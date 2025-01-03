@@ -5,3 +5,5 @@ export class UpdateNewsDto extends PickType(NewsEntity, [
   'title',
   'content'
 ]) {}
+
+//todo виправити dto

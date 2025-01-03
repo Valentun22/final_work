@@ -21,3 +21,5 @@ export class DrinkingService {
         return this.drinkingRepository.find(filters);
     }
 }
+
+//todo виправити any
