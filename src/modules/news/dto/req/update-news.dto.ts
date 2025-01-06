@@ -1,9 +1,20 @@
-import {PickType} from "@nestjs/swagger";
-import {NewsEntity} from "../../entity/news.entity";
+import { ApiPropertyOptional } from '@nestjs/swagger';
+import { IsOptional, IsString } from 'class-validator';
 
-export class UpdateNewsDto extends PickType(NewsEntity, [
-  'title',
-  'content'
-]) {}
+export class UpdateNewsDto {
+  @ApiPropertyOptional({
+    description: 'Headline of the news',
+    example: 'A new exciting title',
+  })
+  @IsString()
+  @IsOptional()
+  readonly title?: string;
 
-//todo виправити dto
+  @ApiPropertyOptional({
+    description: 'Updated news content',
+    example: 'Updated news text...',
+  })
+  @IsString()
+  @IsOptional()
+  readonly content?: string;
+}

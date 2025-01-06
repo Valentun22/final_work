@@ -1,18 +1,35 @@
-import { ApiProperty, PickType } from '@nestjs/swagger';
+import { ApiProperty } from '@nestjs/swagger';
 import { IsNotEmpty, IsString } from 'class-validator';
-import { BaseUserReqDto } from '../../../user/dto/req/base-user.req.dto';
 import { Type } from 'class-transformer';
 
-export class BaseAuthReqDto extends PickType(BaseUserReqDto, [
-  'name',
-  'email',
-  'password',
-]) {
+export class BaseAuthReqDto {
+  @ApiProperty({
+    description: 'User name',
+    example: 'John Doe',
+  })
+  @IsString()
+  @IsNotEmpty()
+  readonly name: string;
+
+  @ApiProperty({
+    description: 'User\'s email address',
+    example: 'example@mail.com',
+  })
+  @IsString()
+  @IsNotEmpty()
+  readonly email: string;
+
+  @ApiProperty({
+    description: 'User password',
+    example: 'password123',
+  })
+  @IsString()
+  @IsNotEmpty()
+  readonly password: string;
+
   @ApiProperty()
   @IsString()
   @IsNotEmpty()
   @Type(() => String)
   readonly deviceId: string;
 }
-
-//todo виправити dto

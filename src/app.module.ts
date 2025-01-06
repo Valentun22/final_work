@@ -68,3 +68,5 @@ import { RedisModule } from './repository/redis/redis.module'
 	],
 })
 export class AppModule {}
+
+// todo додати модулі

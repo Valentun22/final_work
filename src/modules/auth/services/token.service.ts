@@ -30,15 +30,17 @@ export class TokenService {
       refreshToken,
     };
   }
+
   public async verifyToken(
-    token: string,
-    type: TokenType,
+      token: string,
+      type: TokenType,
   ): Promise<JwtPayload> {
     try {
       const secret = this.getSecret(type);
 
       return await this.jwtService.verifyAsync(token, { secret });
     } catch (e) {
+      console.error('Token verification failed:', e.message);
       throw new UnauthorizedException();
     }
   }
@@ -71,5 +73,3 @@ export class TokenService {
     }
   }
 }
-
-//todo виправити error
